@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Murmelrechner</title>
+
+    <script src="https://unpkg.com/split.js/dist/split.min.js"></script>
+    <script src="https://unpkg.com/custom-syntax-highlighter@latest/bin/index.js"></script>
+    <script>
+        var highlight = window.csHighlight;
+    </script>
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="syntax.css" />
+    <link rel="stylesheet" href="textarea.css" />
+    <script src="main.js" defer></script>
+</head>
+
+<body>
+    <div class="split">
+        <div id="split-left"></div>
+        <div id="split-right">
+
+
+            <pre id="highlighting" aria-hidden="true">
+                <code id="highlighting-content">
+                </code>
+            </pre>
+
+            <textarea id="editing" spellcheck="false" oninput="update(this.value);"></textarea>
+
+
+        </div>
+    </div>
+</body>
+
+</html>

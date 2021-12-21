@@ -1,0 +1,27 @@
+#editing,
+#highlighting {
+    /* Also add text styles to highlighting tokens */
+    font-size: 15pt;
+    font-family: monospace;
+    line-height: 20pt;
+}
+
+#editing,
+#highlighting {
+    grid-column: 1;
+    grid-row: 1;
+    margin: 0px;
+    padding: 0px;
+}
+
+#editing {
+    color: transparent;
+    background: transparent;
+    caret-color: white;
+    color: transparent;
+}
+
+pre,
+code {
+    white-space: pre-line;
+}

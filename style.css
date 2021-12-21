@@ -1,0 +1,33 @@
+html,
+body {
+    margin: 0px;
+    padding: 0px;
+    background: rgb(78, 78, 78);
+    height: 100%;
+}
+
+.split {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+
+.gutter {
+    background-color: #eee;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-color: lightgray;
+}
+
+.gutter.gutter-horizontal {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAeCAYAAADkftS9AAAAIklEQVQoU2M4c+bMfxAGAgYYmwGrIIiDjrELjpo5aiZeMwF+yNnOs5KSvgAAAABJRU5ErkJggg==');
+    cursor: col-resize;
+}
+
+#split-right {
+    height: 100%;
+    color: white;
+    margin: 0px;
+    padding: 0px;
+    display: grid;
+}
