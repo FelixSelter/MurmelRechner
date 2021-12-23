@@ -52,3 +52,32 @@ function update(text) {
     document.getElementById('scroll').style.gridTemplateColumns =
         linecount.toString().length * 3.5 + '%';
 }
+
+function save() {
+    var text = document.getElementById('editing').value;
+    var blob = new Blob([text], { type: 'text/plain' });
+    var anchor = document.createElement('a');
+    anchor.download = 'code.txt';
+    anchor.href = window.URL.createObjectURL(blob);
+    anchor.target = '_blank';
+    anchor.style.display = 'none'; // just to be safe!
+    document.body.appendChild(anchor);
+    anchor.click();
+    document.body.removeChild(anchor);
+}
+
+async function load(e) {
+    const input = e.target;
+    if (input.files && input.files.length > 0) {
+        const reader = new FileReader();
+        new Promise((resolve, reject) => {
+            reader.onload = (event) => resolve(event.target.result);
+            reader.onerror = (error) => reject(error);
+            reader.readAsText(input.files[0]);
+        }).then((data) => {
+            document.getElementById('editing').value = data;
+            update(data);
+        });
+    }
+}
+document.getElementById('openButton').addEventListener('change', load);
