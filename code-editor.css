@@ -1,0 +1,59 @@
+#scroll {
+    color: white;
+    margin: 0px;
+    padding: 0px;
+    display: grid;
+    grid-template-columns: 3.5%;
+    overflow-y: scroll;
+    height: 100%;
+}
+
+#editing,
+#highlighting,
+#linenums {
+    /* Also add text styles to highlighting tokens */
+    font-size: 15pt;
+    font-family: monospace;
+    line-height: 20pt;
+}
+
+#editing,
+#highlighting {
+    grid-column: 2;
+    grid-row: 1;
+    margin: 0px;
+    padding: 0px;
+}
+
+#editing {
+    color: transparent;
+    background: transparent;
+    caret-color: white;
+    color: transparent;
+    border: none;
+}
+
+#editing:focus {
+    outline: none !important;
+    border: none;
+    box-shadow: 0 0 10px #719ece;
+}
+
+pre,
+code {
+    white-space: pre-line;
+}
+
+#linenums {
+    background-color: hsl(213, 12%, 15%);
+    color: white;
+    border: none;
+    text-align: right;
+    overflow: hidden;
+    padding-right: 10px;
+}
+
+#linenums:focus {
+    outline: none !important;
+    border: none;
+}

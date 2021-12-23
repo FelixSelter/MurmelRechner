@@ -2,11 +2,11 @@ html,
 body {
     margin: 0px;
     padding: 0px;
-    background: rgb(78, 78, 78);
+    background: hsl(227, 15%, 19%);
     height: 100%;
 }
 
-.split {
+#split {
     display: flex;
     flex-direction: row;
     height: 100%;
@@ -22,12 +22,4 @@ body {
 .gutter.gutter-horizontal {
     background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAeCAYAAADkftS9AAAAIklEQVQoU2M4c+bMfxAGAgYYmwGrIIiDjrELjpo5aiZeMwF+yNnOs5KSvgAAAABJRU5ErkJggg==');
     cursor: col-resize;
-}
-
-#split-right {
-    height: 100%;
-    color: white;
-    margin: 0px;
-    padding: 0px;
-    display: grid;
 }

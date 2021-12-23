@@ -1,7 +1,27 @@
-.fn-call {
+.format-register-number {
+    color: chartreuse;
+}
+
+.format-line-number {
+    color: yellow;
+}
+
+.format-inc {
+    color: aqua;
+}
+
+.format-dec {
     color: red;
 }
 
-.string {
-    color: aqua;
+.format-tst {
+    color: pink;
+}
+
+.format-jmp {
+    color: hsl(30, 100%, 50%);
+}
+
+.format-hlt {
+    color: crimson;
 }
