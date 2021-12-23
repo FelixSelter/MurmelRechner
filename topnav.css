@@ -1,49 +1,34 @@
 .topnav {
     height: 5%;
     background-color: hsl(213, 12%, 15%);
+    display: flex;
+    align-items: center;
 }
 
 .fa-user-plus,
 .fa-save,
 .fa-folder-open,
 .fa-expand,
-.fa-compress-arrows-alt {
+.fa-compress-arrows-alt,
+.fa-play,
+#peerAdress {
     color: white;
+    position: relative;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
-.fa-play {
-    color: #04aa6d;
-}
-
-.topnav div {
-    margin: 10px;
-    text-align: center;
-}
-
-.topnav div:hover * {
+.topnav a:hover * {
     color: greenyellow;
 }
 
-.topnav div {
-    display: inline;
+.topnav .fa-play {
+    color: #04aa6d;
 }
 
-.topnav .fullscreen {
-    float: right;
-}
-
-.topnav .invite {
-    float: right;
-}
-
-.topnav .open {
-    float: left;
-}
-
-.topnav .save {
-    float: left;
-}
-
-.topnav .run {
-    float: left;
+#peerAdress {
+    margin-left: auto;
+    color: white;
+    padding: 5px;
+    text-decoration: none;
 }

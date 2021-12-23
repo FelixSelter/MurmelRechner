@@ -7,35 +7,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Murmelrechner</title>
 
+    <script src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js"></script>
     <script src="https://unpkg.com/split.js/dist/split.min.js"></script>
     <script src="https://unpkg.com/custom-syntax-highlighter@latest/bin/index.js"></script>
     <script>
         var highlight = window.csHighlight;
     </script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="topnav.css" />
     <link rel="stylesheet" href="split.css" />
     <link rel="stylesheet" href="code-editor.css" />
     <link rel="stylesheet" href="syntax.css" />
-    <script src="main.js" defer></script>
+
+    <script src="editor.js" defer></script>
     <script src="topnav.js"></script>
+    <script src="collaboration.js" defer></script>
 </head>
 
 
 <body>
 
-    <div class="topnav">
-        <div class="open"><i class="far fa-folder-open fa-2x"></i></div>
-        <div class="save"><i class="far fa-save fa-2x"></i></div>
-        <div class="run"><i class="fas fa-play fa-2x"></i></div>
-        <div class="fullscreen"><i id="fullscreen" onclick="toggleFullscreen();" class="fas fa-expand fa-2x"></i></div>
-        <div class="invite"><i class="fas fa-user-plus fa-2x"></i></div>
+    <div class=" topnav">
+        <a><i class="far fa-folder-open fa-2x"></i></a>
+        <a><i class="far fa-save fa-2x"></i></a>
+        <a><i class="fas fa-play fa-2x"></i></a>
+        <a target="_blank" rel="noopener noreferrer" id="peerAdress"></a>
+        <a id="collaborationButton"><i onclick="createCollaboration();" class="fas fa-user-plus fa-2x"></i></a>
+        <a><i id="fullscreen" onclick="toggleFullscreen();" class="fas fa-expand fa-2x"></i></a>
     </div>
-
-
 
     <div id="split">
         <div id="split-left">
@@ -47,14 +49,12 @@
 
 
                 <pre id="highlighting" aria-hidden="true">
-                <code id="highlighting-content">
-                </code>
-            </pre>
+                            <code id="highlighting-content">
+                            </code>
+                        </pre>
 
                 <textarea id="editing" spellcheck="false" oninput="update(this.value);"></textarea>
             </div>
-
-
         </div>
     </div>
 </body>
