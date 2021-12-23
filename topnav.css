@@ -1,0 +1,49 @@
+.topnav {
+    height: 5%;
+    background-color: hsl(213, 12%, 15%);
+}
+
+.fa-user-plus,
+.fa-save,
+.fa-folder-open,
+.fa-expand,
+.fa-compress-arrows-alt {
+    color: white;
+}
+
+.fa-play {
+    color: #04aa6d;
+}
+
+.topnav div {
+    margin: 10px;
+    text-align: center;
+}
+
+.topnav div:hover * {
+    color: greenyellow;
+}
+
+.topnav div {
+    display: inline;
+}
+
+.topnav .fullscreen {
+    float: right;
+}
+
+.topnav .invite {
+    float: right;
+}
+
+.topnav .open {
+    float: left;
+}
+
+.topnav .save {
+    float: left;
+}
+
+.topnav .run {
+    float: left;
+}

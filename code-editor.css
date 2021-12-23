@@ -31,6 +31,7 @@
     caret-color: white;
     color: transparent;
     border: none;
+    resize: none;
 }
 
 #editing:focus {

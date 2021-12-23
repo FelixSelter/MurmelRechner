@@ -12,14 +12,31 @@
     <script>
         var highlight = window.csHighlight;
     </script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+
 
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="syntax.css" />
+    <link rel="stylesheet" href="topnav.css" />
+    <link rel="stylesheet" href="split.css" />
     <link rel="stylesheet" href="code-editor.css" />
+    <link rel="stylesheet" href="syntax.css" />
     <script src="main.js" defer></script>
+    <script src="topnav.js"></script>
 </head>
 
+
 <body>
+
+    <div class="topnav">
+        <div class="open"><i class="far fa-folder-open fa-2x"></i></div>
+        <div class="save"><i class="far fa-save fa-2x"></i></div>
+        <div class="run"><i class="fas fa-play fa-2x"></i></div>
+        <div class="fullscreen"><i id="fullscreen" onclick="toggleFullscreen();" class="fas fa-expand fa-2x"></i></div>
+        <div class="invite"><i class="fas fa-user-plus fa-2x"></i></div>
+    </div>
+
+
+
     <div id="split">
         <div id="split-left">
         </div>
