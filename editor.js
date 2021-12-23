@@ -10,7 +10,7 @@ Split(['#split-left', '#split-right']);
 function update(text) {
     // Update code
     let code = document.getElementById('highlighting-content');
-    code.innerText = text;
+    code.innerText = escapist.html(text);
 
     // Syntax Highlight
     highlight({

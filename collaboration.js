@@ -35,8 +35,6 @@ if (urlParams.has('host')) {
     //connect to the host
     peer = new Peer();
     peer.on('open', function(id) {
-        console.log(peer);
-
         var host = peer.connect(hostID);
         host.on('open', function() {
             host.send('hi!');
