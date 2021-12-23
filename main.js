@@ -51,6 +51,4 @@ function update(text) {
     //adjust size if necessary
     document.getElementById('scroll').style.gridTemplateColumns =
         linecount.toString().length * 3.5 + '%';
-
-    document.getElementById('split').style.height = linenums.style.height;
 }
