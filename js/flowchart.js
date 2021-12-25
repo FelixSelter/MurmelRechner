@@ -4,37 +4,87 @@ function generateFlowChart() {
     tab.addEventListener(
         'load',
         (e) => {
-            console.log(tab.document.getElementById('canvas'));
-
             let chart = flowchart.parse(generateFlowChartCode());
-            chart.drawSVG(tab.document.getElementById('canvas'));
+            chart.drawSVG(tab.document.getElementById('canvas'), {
+                'line-width': 3,
+                'text-margin': 10,
+                'font-size': 14,
+                font: 'normal',
+                'font-family': 'Helvetica',
+                'font-weight': 'normal',
+                'font-color': 'black',
+                'line-color': 'black',
+                'element-color': 'black',
+                'yes-text': 'yes ',
+                'no-text': 'no ',
+                'arrow-end': 'block',
+                scale: 1,
+                symbols: {
+                    start: {
+                        'font-color': 'white',
+                        fill: 'green',
+                    },
+                    end: {
+                        'font-color': 'white',
+                        fill: '#dc143c',
+                    },
+                    operation: {
+                        fill: '#00ffff',
+                    },
+                    condition: {
+                        fill: '#ffc0cb',
+                    },
+                    inputoutput: {
+                        fill: '#ff8000',
+                    },
+                    subroutine: {
+                        fill: 'red',
+                    },
+                },
+            });
         },
         true
     );
 }
 
 function generateFlowChartCode() {
-    code = `
-    st=>start: Start|past:>http://www.google.com[blank]
-    e=>end: End:>http://www.google.com
-    op1=>operation: My Operation|past:$myFunction
-    op2=>operation: Stuff|current
-    sub1=>subroutine: My Subroutine|invalid
-    cond=>condition: Yes
-    or No?|approved:>http://www.google.com
-    c2=>condition: Good idea|rejected
-    io=>inputoutput: catch something...|request
-    para=>parallel: parallel tasks
-    
-    st->op1(right)->cond
-    cond(yes, right)->c2
-    cond(no)->para
-    c2(true)->io->e
-    c2(false)->e
-    
-    para(path1, bottom)->sub1(left)->op1
-    para(path2, right)->op2->e  
-   `;
+    let source = getCleanCode();
+    if (source.length < 1) return '';
+
+    code = `start=>start: Start\n`;
+
+    source.forEach((cmd, index) => {
+        let line = index + 1;
+        let nodetype = 'operation';
+
+        if (cmd.startsWith('dec')) {
+            nodetype = 'subroutine';
+        } else if (cmd.startsWith('tst')) {
+            nodetype = 'condition';
+        } else if (cmd.startsWith('jmp')) {
+            nodetype = 'inputoutput';
+        } else if (cmd == 'hlt') {
+            nodetype = 'end';
+        }
+
+        code += `node${line}=>${nodetype}: ${cmd}\n`;
+    });
+
+    code += `\nstart->node1\n`;
+    source.forEach((cmd, index) => {
+        let line = index + 1;
+
+        if (cmd.startsWith('tst')) {
+            code += `node${line}(no)->node${line + 1}\n`;
+            code += `node${line}(yes)->node${line + 2}\n`;
+        } else if (cmd.startsWith('jmp')) {
+            code += `node${line}->node${cmd.replace('jmp ', '')}\n`;
+        } else {
+            code += `node${line}->node${line + 1}\n`;
+        }
+    });
+
+    console.log(code);
 
     return code;
 }

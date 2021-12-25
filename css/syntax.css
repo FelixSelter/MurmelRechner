@@ -7,7 +7,7 @@
 }
 
 .format-inc {
-    color: aqua;
+    color: #00ffff;
     text-decoration-style: wavy;
 }
 
@@ -16,15 +16,15 @@
 }
 
 .format-tst {
-    color: pink;
+    color: #ffc0cb;
 }
 
 .format-jmp {
-    color: hsl(30, 100%, 50%);
+    color: #ff8000;
 }
 
 .format-hlt {
-    color: crimson;
+    color: #dc143c;
 }
 
 .format-error {

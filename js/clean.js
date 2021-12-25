@@ -49,5 +49,10 @@ function cleanCode() {
 }
 
 function getCleanCode(code) {
-    return formatted;
+    let textarea = document.getElementById('editing');
+
+    let regex = /inc [0-9]+|dec [0-9]+|tst [0-9]+|jmp [0-9]+|hlt/g;
+    let matches = textarea.value.match(regex);
+
+    return matches;
 }
