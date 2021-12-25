@@ -13,7 +13,9 @@
 .fa-play,
 .fa-file-export,
 .fa-broom,
-#peerAdress {
+#formatOnRun,
+#peerAdress,
+.topnav label {
     color: white;
     position: relative;
     margin-left: 10px;
@@ -26,6 +28,7 @@
 
 .topnav .fa-play {
     color: #04aa6d;
+    margin-left: 20px;
 }
 
 #peerAdress {
@@ -33,4 +36,8 @@
     color: white;
     padding: 5px;
     text-decoration: none;
+}
+
+#formatOnRun {
+    transform: scale(2);
 }
