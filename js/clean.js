@@ -1,13 +1,8 @@
 function cleanCode() {
     let textarea = document.getElementById('editing');
-    textarea.value = getCleanCode(textarea.value);
-    update();
-    textarea.focus();
-}
 
-function getCleanCode(code) {
     let regex = /inc [0-9]+|dec [0-9]+|tst [0-9]+|jmp [0-9]+|hlt|\n/g;
-    let matches = code.match(regex);
+    let matches = textarea.value.match(regex);
 
     let formatted = '';
     let expectBreak = false;
@@ -25,5 +20,11 @@ function getCleanCode(code) {
         formatted += match;
     });
 
+    textarea.value = formatted;
+    update();
+    textarea.focus();
+}
+
+function getCleanCode(code) {
     return formatted;
 }

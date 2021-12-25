@@ -4,6 +4,13 @@ function init() {
 }
 window.onload = init;
 
+window.addEventListener('beforeunload', function(e) {
+    var confirmationMessage =
+        'You have unsaved changes. Are you sure to leave the page?';
+    (e || window.event).returnValue = confirmationMessage;
+    return confirmationMessage;
+});
+
 //Split screen from split.js
 Split(['#split-left', '#split-right']);
 
