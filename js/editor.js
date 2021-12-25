@@ -4,12 +4,13 @@ function init() {
 }
 window.onload = init;
 
-window.addEventListener('beforeunload', function(e) {
-    var confirmationMessage =
-        'You have unsaved changes. Are you sure to leave the page?';
-    (e || window.event).returnValue = confirmationMessage;
-    return confirmationMessage;
-});
+//warn when user leaves page
+// window.addEventListener('beforeunload', function(e) {
+//     var confirmationMessage =
+//         'You have unsaved changes. Are you sure to leave the page?';
+//     (e || window.event).returnValue = confirmationMessage;
+//     return confirmationMessage;
+// });
 
 //Split screen from split.js
 Split(['#split-left', '#split-right']);
@@ -17,9 +18,9 @@ Split(['#split-left', '#split-right']);
 function update() {
     let text = document.getElementById('editing').value;
 
-    // Update code
+    // Update code xss is handled as every single char is wrapped with a span
     let code = document.getElementById('highlighting-content');
-    code.innerText = escapist.html(text);
+    code.innerText = text;
 
     // Syntax Highlight
     highlight({
@@ -46,6 +47,10 @@ function update() {
             {
                 name: 'format-none',
                 match: /^(&#10;)/,
+            },
+            {
+                name: 'format-none',
+                match: /^(-)/,
             },
             {
                 name: 'format-error',
