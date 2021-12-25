@@ -3,6 +3,10 @@ function cleanCode() {
 
     let regex = /inc [0-9]+|dec [0-9]+|tst [0-9]+|jmp [0-9]+|hlt|\n|-*/g;
     let matches = textarea.value.match(regex);
+
+    //remove emmpty lines that get produced if regex not matches
+    matches = matches.filter((match) => match != '');
+
     if (matches == null) {
         textarea.value = '';
         update();

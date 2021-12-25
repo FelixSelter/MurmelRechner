@@ -3,7 +3,7 @@
     margin: 0px;
     padding: 0px;
     display: grid;
-    grid-template-columns: 3.5%;
+    grid-template-columns: 5px;
     overflow-y: scroll;
     height: 100%;
 }
@@ -15,6 +15,7 @@
     font-size: 15pt;
     font-family: monospace;
     line-height: 20pt;
+    resize: none;
 }
 
 #editing,
@@ -31,7 +32,6 @@
     caret-color: white;
     color: transparent;
     border: none;
-    resize: none;
 }
 
 #editing:focus {
