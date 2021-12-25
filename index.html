@@ -14,6 +14,8 @@
         var highlight = window.csHighlight;
     </script>
 
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.3.0/raphael.min.js"></script>
+    <script src="http://flowchart.js.org/flowchart-latest.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 
     <link rel="stylesheet" href="css/style.css" />
@@ -27,17 +29,20 @@
     <script src="js/collaboration.js" defer></script>
     <script src="js/simulator.js" defer></script>
     <script src="js/clean.js" defer></script>
+    <script src="js/flowchart.js" defer></script>
 </head>
 
 
 <body>
+
+    <div id="canvas"></div>
 
 
     <div class=" topnav">
         <a><label><i class="far fa-folder-open fa-2x"></i><input id="openButton" type="file"
                     style="display:none;"></input></label></a>
         <a><i class="far fa-save fa-2x" onclick="save();"></i></a>
-        <a><i class="fas fa-file-export fa-2x"></i></a>
+        <a><i class="fas fa-file-export fa-2x" onclick="generateFlowChart();"></i></a>
         <a><i class="fas fa-broom fa-2x" onclick="cleanCode()"></i></a>
         <a><label for="formatOnRun">Format on execution?</label><input type="checkbox" id="formatOnRun"
                 name="formatOnRun"></a>
