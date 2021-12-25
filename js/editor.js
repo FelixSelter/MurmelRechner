@@ -1,13 +1,15 @@
 //on reload the textarea will still contain text. We have to put that into the code element and format the text
 function init() {
-    update(document.getElementById('editing').value);
+    update();
 }
 window.onload = init;
 
 //Split screen from split.js
 Split(['#split-left', '#split-right']);
 
-function update(text) {
+function update() {
+    let text = document.getElementById('editing').value;
+
     // Update code
     let code = document.getElementById('highlighting-content');
     code.innerText = escapist.html(text);
@@ -33,6 +35,14 @@ function update(text) {
             {
                 name: 'format-hlt',
                 match: /^(hlt)/,
+            },
+            {
+                name: 'format-none',
+                match: /^(&#10;)/,
+            },
+            {
+                name: 'format-error',
+                match: /^(.)/,
             },
         ],
         selector: '#highlighting-content',
@@ -76,7 +86,7 @@ async function load(e) {
             reader.readAsText(input.files[0]);
         }).then((data) => {
             document.getElementById('editing').value = data;
-            update(data);
+            update();
         });
     }
 }

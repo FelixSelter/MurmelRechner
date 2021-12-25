@@ -8,6 +8,7 @@
 
 .format-inc {
     color: aqua;
+    text-decoration-style: wavy;
 }
 
 .format-dec {
@@ -24,4 +25,10 @@
 
 .format-hlt {
     color: crimson;
+}
+
+.format-error {
+    text-decoration-line: underline;
+    text-decoration-style: wavy;
+    text-decoration-color: red;
 }
