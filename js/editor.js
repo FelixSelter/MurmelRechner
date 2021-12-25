@@ -50,17 +50,25 @@ function update() {
 
     //linenums
     let linenums = document.getElementById('linenums');
-    let linecount = text.split('\n').length;
+    let lines = text.split('\n');
 
     //reset value
     linenums.value = '';
 
-    //add line number for every line
-    for (let i = 1; i <= linecount; i++) linenums.value += i + '\n';
+    //add line number for every line that is not empty
+    let counter = 1;
+    for (let i = 0; i < lines.length; i++) {
+        if (lines[i] != '') {
+            linenums.value += counter + '\n';
+            counter++;
+        } else {
+            linenums.value += '\n';
+        }
+    }
 
     //adjust size if necessary
     document.getElementById('scroll').style.gridTemplateColumns =
-        linecount.toString().length * 3.5 + '%';
+        lines.length.toString().length * 3.5 + '%';
 }
 
 function save() {
