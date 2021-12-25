@@ -79,8 +79,8 @@ function update() {
     }
 
     //adjust size if necessary
-    document.getElementById('scroll').style.gridTemplateColumns =
-        lines.length.toString().length * 3.5 + '%';
+    document.getElementById('scroll-right').style.gridTemplateColumns =
+        getTextWidth(counter) + 20 + 'px';
 }
 
 function save() {
@@ -111,3 +111,21 @@ async function load(e) {
     }
 }
 document.getElementById('openButton').addEventListener('change', load);
+
+function getTextWidth(text) {
+    let measure = document.createElement('div');
+    measure.innerHTML = text;
+    measure.style.position = 'absolute';
+    measure.style.float = 'left';
+    measure.style.whiteSpace = 'nowrap';
+    measure.style.visibility = 'hidden';
+    measure.style.fontSize = '15pt';
+    measure.style.fontFamily = 'monospace';
+    measure.style.lineHeight = '20pt';
+
+    document.body.appendChild(measure);
+    let width = measure.clientWidth;
+    measure.remove();
+
+    return width;
+}

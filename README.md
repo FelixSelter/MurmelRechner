@@ -20,3 +20,7 @@ dec 3
 inc 2
 jmp 10
 ```
+
+Example division code
+```
+```

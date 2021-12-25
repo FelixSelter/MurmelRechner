@@ -21,8 +21,9 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/topnav.css" />
     <link rel="stylesheet" href="css/split.css" />
-    <link rel="stylesheet" href="css/code-editor.css" />
+    <link rel="stylesheet" href="css/editor.css" />
     <link rel="stylesheet" href="css/syntax.css" />
+    <link rel="stylesheet" href="css/simulator.css" />
 
     <script src="js/editor.js" defer></script>
     <script src="js/topnav.js"></script>
@@ -30,13 +31,11 @@
     <script src="js/simulator.js" defer></script>
     <script src="js/clean.js" defer></script>
     <script src="js/flowchart.js" defer></script>
+    <script src="js/simulator.js" defer></script>
 </head>
 
 
 <body>
-
-    <div id="canvas"></div>
-
 
     <div class=" topnav">
         <a><label><i class="far fa-folder-open fa-2x"></i><input id="openButton" type="file"
@@ -54,10 +53,24 @@
 
     <div id="split">
         <div id="split-left">
+
+            <div id="scroll-left">
+                <div class="register">
+                    <div class="marble"></div>
+                    <div class="marble"></div>
+                </div>
+                <div class="register"></div>
+                <div class="register">
+                    <div class="marble"></div>
+                </div>
+                <div class="register"></div>
+            </div>
+
         </div>
+
         <div id="split-right">
 
-            <div id="scroll">
+            <div id="scroll-right">
                 <textarea id="linenums" readonly></textarea>
 
 

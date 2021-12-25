@@ -1,9 +1,9 @@
-#scroll {
+#scroll-right {
     color: white;
     margin: 0px;
     padding: 0px;
     display: grid;
-    grid-template-columns: 5px;
+    grid-template-columns: 20px;
     overflow-y: scroll;
     height: 100%;
 }
