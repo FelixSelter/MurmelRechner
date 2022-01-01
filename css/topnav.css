@@ -1,5 +1,4 @@
 .topnav {
-    height: 5%;
     background-color: hsl(213, 12%, 15%);
     display: flex;
     align-items: center;
@@ -20,8 +19,7 @@
 .topnav label {
     color: white;
     position: relative;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin: 10px;
 }
 
 .topnav a:hover * {
