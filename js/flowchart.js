@@ -1,5 +1,8 @@
 function generateFlowChart() {
-    let tab = window.open(window.location + 'FlowChart.html', 'Flowchart');
+    let tab = window.open(
+        window.location.origin + '/FlowChart.html',
+        'Flowchart'
+    );
 
     tab.addEventListener(
         'load',
