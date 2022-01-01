@@ -12,8 +12,27 @@
 </head>
 
 <body>
+    <button id="download">Download</button>
     <div id="canvas"></div>
-    <button>Download</button>
+
+    <script>
+        document.getElementById("download").onclick = function(e) {
+            const canvas = document.getElementById("canvas");
+            if (canvas.children.length > 0) {
+                const svgData = canvas.querySelector("svg").outerHTML;
+                var svgBlob = new Blob([svgData], {
+                    type: "image/svg+xml;charset=utf-8"
+                });
+                var svgUrl = URL.createObjectURL(svgBlob);
+                var downloadLink = document.createElement("a");
+                downloadLink.href = svgUrl;
+                downloadLink.download = "flowchart.svg";
+                document.body.appendChild(downloadLink);
+                downloadLink.click();
+                document.body.removeChild(downloadLink);
+            }
+        }
+    </script>
 </body>
 
 </html>
