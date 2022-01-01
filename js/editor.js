@@ -80,7 +80,7 @@ function update() {
 
     //adjust size if necessary
     document.getElementById('scroll-right').style.gridTemplateColumns =
-        getTextWidth(counter) + 20 + 'px';
+        '40px ' + (getTextWidth(counter) + 20) + 'px';
 }
 
 function save() {

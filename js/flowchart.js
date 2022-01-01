@@ -84,7 +84,5 @@ function generateFlowChartCode() {
         }
     });
 
-    console.log(code);
-
     return code;
 }

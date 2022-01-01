@@ -29,3 +29,9 @@
     background-color: hsla(123, 100%, 56%, 0.884);
     box-shadow: 0px 0px 50px 10px hsla(123, 100%, 56%, 0.884);
 }
+
+#pointer {
+    color: red;
+    position: relative;
+    top: -4pt;
+}

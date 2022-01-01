@@ -13,7 +13,7 @@
 .fa-play,
 .fa-file-export,
 .fa-broom,
-#formatOnRun,
+.fa-arrow-circle-right,
 #peerAdress,
 .topnav label {
     color: white;
@@ -26,7 +26,8 @@
     color: greenyellow;
 }
 
-.topnav .fa-play {
+.topnav .fa-play,
+.topnav .fa-arrow-circle-right {
     color: #04aa6d;
     margin-left: 20px;
 }
@@ -36,8 +37,4 @@
     color: white;
     padding: 5px;
     text-decoration: none;
-}
-
-#formatOnRun {
-    transform: scale(2);
 }

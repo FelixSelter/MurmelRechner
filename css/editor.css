@@ -3,24 +3,30 @@
     margin: 0px;
     padding: 0px;
     display: grid;
-    grid-template-columns: 20px;
+    grid-template-columns: 40px 20px;
     overflow-y: scroll;
     height: 100%;
 }
 
 #editing,
 #highlighting,
-#linenums {
-    /* Also add text styles to highlighting tokens */
+#linenums,
+#pointer-container {
     font-size: 15pt;
     font-family: monospace;
     line-height: 20pt;
     resize: none;
 }
 
+#pointer-container {
+    background-color: hsl(213, 12%, 15%);
+    grid-column: 1;
+    text-align: right;
+}
+
 #editing,
 #highlighting {
-    grid-column: 2;
+    grid-column: 3;
     grid-row: 1;
     margin: 0px;
     padding: 0px;
@@ -52,6 +58,7 @@ code {
     text-align: right;
     overflow: hidden;
     padding-right: 10px;
+    grid-column: 2;
 }
 
 #linenums:focus {

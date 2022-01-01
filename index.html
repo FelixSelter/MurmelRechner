@@ -43,9 +43,8 @@
         <a><i class="far fa-save fa-2x" onclick="save();"></i></a>
         <a><i class="fas fa-file-export fa-2x" onclick="generateFlowChart();"></i></a>
         <a><i class="fas fa-broom fa-2x" onclick="cleanCode()"></i></a>
-        <a><label for="formatOnRun">Format on execution?</label><input type="checkbox" id="formatOnRun"
-                name="formatOnRun"></a>
-        <a><i class="fas fa-play fa-2x"></i></a>
+        <a><i class="fas fa-play fa-2x" onclick="execute();"></i></a>
+        <a><i class="fas fa-arrow-circle-right fa-2x" onclick="if(processLine())line=1;"></i></a>
         <a target="_blank" rel="noopener noreferrer" id="peerAdress"></a>
         <a id="collaborationButton"><i onclick="createCollaboration();" class="fas fa-user-plus fa-2x"></i></a>
         <a><i id="fullscreen" onclick="toggleFullscreen();" class="fas fa-expand fa-2x"></i></a>
@@ -58,11 +57,13 @@
                 <div class="register">
                     <div class="marble"></div>
                     <div class="marble"></div>
-                </div>
-                <div class="register"></div>
-                <div class="register">
                     <div class="marble"></div>
                 </div>
+                <div class="register">
+                    <div class="marble"></div>
+                    <div class="marble"></div>
+                </div>
+                <div class="register"> </div>
                 <div class="register"></div>
             </div>
 
@@ -71,6 +72,9 @@
         <div id="split-right">
 
             <div id="scroll-right">
+                <div id="pointer-container">
+                    <i id="pointer" class="fas fa-long-arrow-alt-right fa-2x"></i>
+                </div>
                 <textarea id="linenums" readonly></textarea>
 
 
