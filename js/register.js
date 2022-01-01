@@ -76,3 +76,4 @@ function updateAllRegisters() {
     )
         displayRegister(i);
 }
+window.onresize = updateAllRegisters;
