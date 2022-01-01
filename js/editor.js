@@ -13,7 +13,9 @@ window.onload = init;
 // });
 
 //Split screen from split.js
-Split(['#split-left', '#split-right']);
+Split(['#split-left', '#split-right'], {
+    onDrag: updateAllRegisters,
+});
 
 function update() {
     let text = document.getElementById('editing').value;

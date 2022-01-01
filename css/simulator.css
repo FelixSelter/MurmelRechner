@@ -1,5 +1,6 @@
 #scroll-left {
     overflow-y: auto;
+    width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -18,6 +19,7 @@
     box-shadow: 0 0 0.1vw 0.4vw #fff7f7, 0 0 0.4vw 0.6vw #e97272, 0 0 4vw 0.4vw #e50b0b, inset 0 0 1.5vw 0.4vw #e50b0b, inset 0 0 0.4vw 0.2vw #e97272, inset 0 0 0.5vw 0.2vw #fff7f7;
     border-radius: 1.5rem;
     display: flex;
+    justify-content: center;
 }
 
 .marble {
@@ -56,4 +58,13 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.register p {
+    font-size: 60px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin: 0px;
+    height: 60px;
+    color: hsla(123, 100%, 56%, 0.884);
 }

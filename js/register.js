@@ -21,34 +21,58 @@ function removeRegister() {
 }
 
 function addToRegister(index) {
-    let toCreate =
-        index + 1 - document.getElementById('scroll-left').children.length;
-    if (toCreate > 0)
-        for (let i = 0; i < toCreate; i++) addRegister();
-
-    let registerContainer =
-        document.getElementById('scroll-left').children[index];
-    let marble = document.createElement('div');
-    marble.classList.add('marble');
-    registerContainer.querySelector('.register').appendChild(marble);
+    checkRegisterCount(index);
 
     if (registers[index] == null) registers[index] = 0;
     registers[index]++;
+
+    displayRegister(index);
 }
 
 function removeFromRegister(index) {
-    let toCreate =
-        index + 1 - document.getElementById('scroll-left').children.length;
-    if (toCreate > 0)
-        for (let i = 0; i < toCreate; i++) addRegister();
+    checkRegisterCount(index);
 
     if (registers[index] == null) registers[index] = 0;
     registers[index]--;
     if (registers[index] < 0) registers[index] = 0;
-    else {
-        let registerContainer =
-            document.getElementById('scroll-left').children[index];
-        let register = registerContainer.querySelector('.register');
-        register.removeChild(register.lastElementChild);
-    }
+
+    displayRegister(index);
+}
+
+function checkRegisterCount(index) {
+    let toCreate =
+        index + 1 - document.getElementById('scroll-left').children.length;
+    if (toCreate > 0)
+        for (let i = 0; i < toCreate; i++) addRegister();
+}
+
+function displayRegister(index) {
+    let registerContainer =
+        document.getElementById('scroll-left').children[index];
+    let register = registerContainer.querySelector('.register');
+
+    //clear everything
+    register.innerHTML = '';
+
+    // can show marbles
+    if (registers[index] <= register.offsetWidth / 70) {
+        //add marbles
+        if (register.children.length != registers[index]) {
+            for (let i = 0; i < registers[index]; i++) {
+                let marble = document.createElement('div');
+                marble.classList.add('marble');
+                register.appendChild(marble);
+            }
+        }
+    } //set text tag if it cant display marbles
+    else
+        register.innerHTML =
+        '<p>' + (registers[index] ? registers[index] : '') + '</p>';
+}
+
+function updateAllRegisters() {
+    for (
+        let i = 0; i < document.getElementById('scroll-left').children.length; i++
+    )
+        displayRegister(i);
 }
