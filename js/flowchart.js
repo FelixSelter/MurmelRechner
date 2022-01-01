@@ -1,6 +1,6 @@
 function generateFlowChart() {
     let tab = window.open(
-        window.location.origin.replace('/index.html', '') + '/FlowChart.html',
+        window.location.href.replace('/index.html', '') + '/FlowChart.html',
         'Flowchart'
     );
 
