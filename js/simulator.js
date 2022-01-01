@@ -1,17 +1,9 @@
-var registers = [3, 2, 0, 0];
+var registers = [];
 var line = 1;
 
 function processLine() {
     pointer.style.color = '#04aa6d';
-    let end = executeLine();
-
-    //reset
-    if (end) {
-        line = 1;
-        pointer.style.top = '-4pt';
-        pointer.style.color = 'red';
-        return true;
-    }
+    return executeLine();
 }
 
 function executeLine() {
@@ -55,11 +47,11 @@ function executeLine() {
             return true;
 
         case 'inc':
-            registers[param - 1]++;
+            addToRegister(param - 1);
             break;
 
         case 'dec':
-            registers[param - 1]--;
+            removeFromRegister(param - 1);
             break;
 
         default:
@@ -72,11 +64,21 @@ function executeLine() {
 
 async function execute() {
     while (true) {
+        if (processLine()) {
+            await Sleep(1000);
+            resetSimulator();
+            break;
+        }
         await Sleep(1000);
-        if (processLine()) break;
     }
 }
 
 function Sleep(milliseconds) {
     return new Promise((resolve) => setTimeout(resolve, milliseconds));
+}
+
+function resetSimulator() {
+    line = 1;
+    pointer.style.top = '-4pt';
+    pointer.style.color = 'red';
 }

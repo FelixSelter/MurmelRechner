@@ -32,19 +32,34 @@
     <script src="js/clean.js" defer></script>
     <script src="js/flowchart.js" defer></script>
     <script src="js/simulator.js" defer></script>
+    <script src="js/register.js" defer></script>
 </head>
 
 
 <body>
+
+    <template id="register">
+        <div class="register-container">
+            <div class="register-controls">
+                <i class="fas fa-plus fa-lg"
+                    onclick="addToRegister(Array.prototype.indexOf.call(this.parentElement.parentElement.parentElement.children, this.parentElement.parentElement));"></i>
+                <i class="fas fa-minus fa-lg"
+                    onclick="removeFromRegister(Array.prototype.indexOf.call(this.parentElement.parentElement.parentElement.children, this.parentElement.parentElement));"></i>
+            </div>
+            <div class="register"></div>
+        </div>
+    </template>
 
     <div class=" topnav">
         <a><label><i class="far fa-folder-open fa-2x"></i><input id="openButton" type="file"
                     style="display:none;"></input></label></a>
         <a><i class="far fa-save fa-2x" onclick="save();"></i></a>
         <a><i class="fas fa-file-export fa-2x" onclick="generateFlowChart();"></i></a>
-        <a><i class="fas fa-broom fa-2x" onclick="cleanCode()"></i></a>
+        <a><i class="fas fa-broom fa-2x" onclick="cleanCode();"></i></a>
+        <a><i class="fas fa-plus fa-2x" onclick="addRegister();"></i></a>
+        <a><i class="fas fa-minus fa-2x" onclick="removeRegister();"></i></a>
         <a><i class="fas fa-play fa-2x" onclick="execute();"></i></a>
-        <a><i class="fas fa-arrow-circle-right fa-2x" onclick="if(processLine())line=1;"></i></a>
+        <a><i class="fas fa-arrow-circle-right fa-2x" onclick="if(processLine())resetSimulator();"></i></a>
         <a target="_blank" rel="noopener noreferrer" id="peerAdress"></a>
         <a id="collaborationButton"><i onclick="createCollaboration();" class="fas fa-user-plus fa-2x"></i></a>
         <a><i id="fullscreen" onclick="toggleFullscreen();" class="fas fa-expand fa-2x"></i></a>
@@ -53,21 +68,9 @@
     <div id="split">
         <div id="split-left">
 
-            <div id="scroll-left">
-                <div class="register">
-                    <div class="marble"></div>
-                    <div class="marble"></div>
-                    <div class="marble"></div>
-                </div>
-                <div class="register">
-                    <div class="marble"></div>
-                    <div class="marble"></div>
-                </div>
-                <div class="register"> </div>
-                <div class="register"></div>
-            </div>
-
+            <div id="scroll-left"></div>
         </div>
+
 
         <div id="split-right">
 

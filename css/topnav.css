@@ -14,6 +14,8 @@
 .fa-file-export,
 .fa-broom,
 .fa-arrow-circle-right,
+.fa-plus,
+.fa-minus,
 #peerAdress,
 .topnav label {
     color: white;
@@ -23,7 +25,7 @@
 }
 
 .topnav a:hover * {
-    color: greenyellow;
+    color: blueviolet;
 }
 
 .topnav .fa-play,
@@ -37,4 +39,12 @@
     color: white;
     padding: 5px;
     text-decoration: none;
+}
+
+.fa-plus {
+    color: hsl(120, 100%, 50%);
+}
+
+.fa-minus {
+    color: red;
 }

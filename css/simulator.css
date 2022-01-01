@@ -7,15 +7,16 @@
 }
 
 .register {
+    grid-column: 2;
+    margin-right: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     flex-grow: 0;
     flex-shrink: 0;
     width: 100%-10px;
     height: 70px;
     box-shadow: 0 0 0.1vw 0.4vw #fff7f7, 0 0 0.4vw 0.6vw #e97272, 0 0 4vw 0.4vw #e50b0b, inset 0 0 1.5vw 0.4vw #e50b0b, inset 0 0 0.4vw 0.2vw #e97272, inset 0 0 0.5vw 0.2vw #fff7f7;
     border-radius: 1.5rem;
-    margin: 10px;
-    margin-bottom: 30px;
-    margin-top: 30px;
     display: flex;
 }
 
@@ -34,4 +35,25 @@
     color: red;
     position: relative;
     top: -4pt;
+}
+
+.register-container {
+    display: grid;
+    grid-template-columns: 50px;
+}
+
+.register-container .fa-plus,
+.register-container .fa-minus {
+    margin: 10px;
+}
+
+.register-container .fa-plus:hover,
+.register-container .fa-minus:hover {
+    color: blueviolet;
+}
+
+.register-controls {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
