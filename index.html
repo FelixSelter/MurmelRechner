@@ -7,25 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Murmelrechner</title>
 
-    <script src="js/register.js"></script>
-    <script src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/peerjs/1.3.2/peerjs.min.js" integrity="sha512-4wTQ8feow93K3qVGVXUGLULDB9eAULiG+xdbaQH8tYZlXxYv9ij+evblXD0EOqmGWT8NBTd1vQGsURvrQzmKeg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/automerge@1.0.1-preview.0/dist/automerge.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/FelixSelter/P2P-Collaborative-Textarea/dist/CollaborativeTextarea.js"></script>
     <script src="https://unpkg.com/split.js/dist/split.min.js"></script>
     <script src="https://unpkg.com/custom-syntax-highlighter@latest/bin/index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.3.0/raphael.min.js"></script>
+    <script src="https://flowchart.js.org/flowchart-latest.js"></script>
     <script>
         var highlight = window.csHighlight;
     </script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.3.0/raphael.min.js"></script>
-    <script src="https://flowchart.js.org/flowchart-latest.js"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
-
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/topnav.css" />
-    <link rel="stylesheet" href="css/split.css" />
-    <link rel="stylesheet" href="css/editor.css" />
-    <link rel="stylesheet" href="css/syntax.css" />
-    <link rel="stylesheet" href="css/simulator.css" />
-
+    <script src="js/register.js" defer></script>
     <script src="js/editor.js" defer></script>
     <script src="js/topnav.js"></script>
     <script src="js/collaboration.js" defer></script>
@@ -34,10 +26,34 @@
     <script src="js/flowchart.js" defer></script>
     <script src="js/simulator.js" defer></script>
 
+    <!---->
+
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/topnav.css" />
+    <link rel="stylesheet" href="css/split.css" />
+    <link rel="stylesheet" href="css/editor.css" />
+    <link rel="stylesheet" href="css/syntax.css" />
+    <link rel="stylesheet" href="css/simulator.css" />
+    <link rel="stylesheet" href="css/collaboration.css" />
+
 </head>
 
 
 <body>
+
+    <template id="joinDialog">
+        <div class="blockAccess">
+            <div class="confirmDialog">
+                <p class="question">Are you sure you want to connect to this host?</p>
+                <p id="questionBody"></p>
+                <div class="btnContainer"><button class="btn">CONNECT</button>
+                    <button class="btn">CANCEL</button>
+                </div>
+            </div>
+        </div>
+    </template>
 
     <template id="register">
         <div class="register-container">
