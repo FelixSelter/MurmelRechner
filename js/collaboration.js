@@ -2,6 +2,7 @@ function createCollaboration() {
     collaborativeTextarea.init({
         textarea: document.getElementById('editing'),
         onOpen: enableRemote,
+        onUpdate: remoteUpdateHandler,
     });
 }
 
@@ -14,6 +15,30 @@ function enableRemote(id) {
 
     //clear the share button
     document.getElementById('collaborationButton').outerHTML = '';
+}
+
+function connectJoin() {
+    if (document.getElementById('editing').value == '') {
+        let remoteId = document.getElementById('questionBody').textContent;
+        document.getElementsByClassName('blockAccess')[0].remove();
+
+        collaborativeTextarea.init({
+            textarea: document.getElementById('editing'),
+            onOpen: function(myID) {
+                collaborativeTextarea.connect(remoteId);
+                enableRemote(myID);
+            },
+            onUpdate: remoteUpdateHandler,
+        });
+    } else alert('Clear your editor before connecting');
+}
+
+function cancelJoin() {
+    window.location.href = window.location.origin + window.location.pathname;
+}
+
+function remoteUpdateHandler() {
+    update();
 }
 
 const urlParams = new URLSearchParams(window.location.search);
