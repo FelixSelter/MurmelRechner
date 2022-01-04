@@ -11,7 +11,7 @@ function enableRemote(id) {
     let e = document.getElementById('peerAdress');
     e.text = id;
     e.style.border = '1px solid red';
-    e.href = window.location.origin + '?host=' + id;
+    e.href = window.location.href.replace('/index.html', '') + '?host=' + id;
 
     //clear the share button
     document.getElementById('collaborationButton').outerHTML = '';
