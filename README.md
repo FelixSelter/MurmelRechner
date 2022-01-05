@@ -19,7 +19,7 @@ https://felixselter.github.io/MurmelRechner/
 8. ![nextline](https://user-images.githubusercontent.com/55546882/148061731-c0e88d8e-d888-41f8-b9b3-b62d47ea682d.png)Execute this line. The current position is indicated by this pointer ![pointer](https://user-images.githubusercontent.com/55546882/148063270-7ed1955c-bf79-44c1-9df1-51b103d24272.png)
 9. ![collaboration](https://user-images.githubusercontent.com/55546882/148063904-1a50f737-1c97-4c0d-9cb0-a13fb65e0db7.png)Enable the collaboration mode
 10. ![fullscreen](https://user-images.githubusercontent.com/55546882/148063906-0b35c442-9ec7-43fc-bda9-a5f57d8bd66f.png)Enter the fullscreen mode
-11. ![id](https://user-images.githubusercontent.com/55546882/148065155-0ce3572b-c0e5-4694-99be-06e547b85215.png) Click you id to get a link so you can invite others
+11. ![id](https://user-images.githubusercontent.com/55546882/148065155-0ce3572b-c0e5-4694-99be-06e547b85215.png) Click the id to get a link so you can invite others
 
 ### Beautiful syntax highlighting
 ![syntax](https://user-images.githubusercontent.com/55546882/148062386-b810ba2e-40a4-4183-a949-d1f27a3521c5.png)

@@ -1,7 +1,8 @@
 .topnav {
-    background-color: hsl(213, 12%, 15%);
-    display: flex;
-    align-items: center;
+  background-color: hsl(213, 12%, 15%);
+  display: flex;
+  align-items: center;
+  height: 50px;
 }
 
 .fa-user-plus,
@@ -17,32 +18,32 @@
 .fa-minus,
 #peerAdress,
 .topnav label {
-    color: white;
-    position: relative;
-    margin: 10px;
+  color: white;
+  position: relative;
+  margin: 10px;
 }
 
 .topnav a:hover * {
-    color: blueviolet;
+  color: blueviolet;
 }
 
 .topnav .fa-play,
 .topnav .fa-arrow-circle-right {
-    color: #04aa6d;
-    margin-left: 20px;
+  color: #04aa6d;
+  margin-left: 20px;
 }
 
 #peerAdress {
-    margin-left: auto;
-    color: white;
-    padding: 5px;
-    text-decoration: none;
+  margin-left: auto;
+  color: white;
+  padding: 5px;
+  text-decoration: none;
 }
 
 .fa-plus {
-    color: hsl(120, 100%, 50%);
+  color: hsl(120, 100%, 50%);
 }
 
 .fa-minus {
-    color: red;
+  color: red;
 }
