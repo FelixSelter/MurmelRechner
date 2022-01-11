@@ -40,6 +40,7 @@ function executeLine() {
             break;
 
         case 'tst':
+            console.log(!(registers[param - 1] > 0));
             if (registers[param - 1] && !(registers[param - 1] > 0)) line++;
             break;
 
