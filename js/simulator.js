@@ -40,7 +40,7 @@ function executeLine() {
             break;
 
         case 'tst':
-            if (registers[param - 1] && registers[param - 1] > 0) line++;
+            if (registers[param - 1] && !(registers[param - 1] > 0)) line++;
             break;
 
         case 'hlt':
