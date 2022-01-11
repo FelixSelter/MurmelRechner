@@ -40,7 +40,11 @@ function executeLine() {
             break;
 
         case 'tst':
-            if (registers[param - 1] && !(registers[param - 1] > 0)) line+=2;
+            let hasContent = registers[param - 1] && !(registers[param - 1] > 0);
+            if (hasContent){
+                console.log("abc");
+                line += 2;
+            }
             break;
 
         case 'hlt':
