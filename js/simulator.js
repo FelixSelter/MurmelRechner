@@ -40,11 +40,8 @@ function executeLine() {
             break;
 
         case 'tst':
-            let hasContent = registers[param - 1] && !(registers[param - 1] > 0);
-            if (hasContent){
-                console.log("abc");
-                line += 2;
-            }
+            //If register exists and it does not conatin content
+            if (registers[param - 1] != null && !(registers[param - 1] > 0))line ++;
             break;
 
         case 'hlt':
