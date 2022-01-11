@@ -78,8 +78,8 @@ function generateFlowChartCode() {
         let line = index + 1;
 
         if (cmd.startsWith('tst')) {
-            code += `node${line}(no)->node${line + 1}\n`;
-            code += `node${line}(yes)->node${line + 2}\n`;
+            code += `node${line}(yes)->node${line + 1}\n`;
+            code += `node${line}(no)->node${line + 2}\n`;
         } else if (cmd.startsWith('jmp')) {
             code += `node${line}->node${cmd.replace('jmp ', '')}\n`;
         } else {
