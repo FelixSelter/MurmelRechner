@@ -1,10 +1,11 @@
-//on reload the textarea will still contain text. We have to put that into the code element and format the text
+// on reload the textarea will still contain text.
+// We have to put that into the code element and format the text
 function init() {
   update();
 }
 window.onload = init;
 
-//warn when user leaves page
+// warn when user leaves page
 // window.addEventListener('beforeunload', function(e) {
 //     var confirmationMessage =
 //         'You have unsaved changes. Are you sure to leave the page?';
@@ -12,16 +13,16 @@ window.onload = init;
 //     return confirmationMessage;
 // });
 
-//Split screen from split.js
+// Split screen from split.js
 Split(['#split-left', '#split-right'], {
   onDrag: updateAllRegisters,
 });
 
 function update() {
-  let text = document.getElementById('editing').value;
+  const text = document.getElementById('editing').value;
 
   // Update code xss is handled as every single char is wrapped with a span
-  let code = document.getElementById('highlighting-content');
+  const code = document.getElementById('highlighting-content');
   code.innerText = text;
 
   // Syntax Highlight
@@ -63,14 +64,14 @@ function update() {
     selector: '#highlighting-content',
   });
 
-  //linenums
-  let linenums = document.getElementById('linenums');
-  let lines = text.split('\n');
+  // linenums
+  const linenums = document.getElementById('linenums');
+  const lines = text.split('\n');
 
-  //reset value
+  // reset value
   linenums.value = '';
 
-  //add line number for every line that is not empty
+  // add line number for every line that is not empty
   let counter = 1;
   for (let i = 0; i < lines.length; i++) {
     if (lines[i] != '') {
@@ -81,15 +82,15 @@ function update() {
     }
   }
 
-  //adjust size if necessary
+  // adjust size if necessary
   document.getElementById('scroll-right').style.gridTemplateColumns =
     '40px ' + (getTextWidth(counter - 1) + 25) + 'px';
 }
 
 function save() {
-  var text = document.getElementById('editing').value;
-  var blob = new Blob([text], { type: 'text/plain' });
-  var anchor = document.createElement('a');
+  const text = document.getElementById('editing').value;
+  const blob = new Blob([text], { type: 'text/plain' });
+  const anchor = document.createElement('a');
   anchor.download = 'code.txt';
   anchor.href = window.URL.createObjectURL(blob);
   anchor.target = '_blank';
@@ -116,7 +117,7 @@ async function load(e) {
 document.getElementById('openButton').addEventListener('change', load);
 
 function getTextWidth(text) {
-  let measure = document.createElement('div');
+  const measure = document.createElement('div');
   measure.innerHTML = text;
   measure.style.position = 'absolute';
   measure.style.float = 'left';
@@ -127,7 +128,7 @@ function getTextWidth(text) {
   measure.style.lineHeight = '20pt';
 
   document.body.appendChild(measure);
-  let width = measure.clientWidth;
+  const width = measure.clientWidth;
   measure.remove();
 
   return width;

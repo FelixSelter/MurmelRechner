@@ -5,6 +5,7 @@
   height: 50px;
 }
 
+.fa-hand-paper,
 .fa-user-plus,
 .fa-save,
 .fa-folder-open,
@@ -45,5 +46,9 @@
 }
 
 .fa-minus {
+  color: red;
+}
+
+.fa-hand-paper {
   color: red;
 }
